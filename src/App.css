@@ -36,12 +36,13 @@
 /* Card styles */
 
 .card-container {
-  padding: 5px;
+  flex-direction: row;
+  /* padding: 5px;
   justify-content: center;
   width: 200px;
   border: 1px solid black;
   line-height: 5px;
-  margin: 10px;
+  margin: 10px; */
 }
 
 .upper-card {
@@ -78,9 +79,8 @@
 
 .table-container {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
+  justify-items: center;
 }
 
 .loader-title {
