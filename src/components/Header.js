@@ -14,6 +14,9 @@ export const Header = ({
         justifyContent: "space-between",
         alignItems: "center",
         padding: "10px",
+        position: "fixed",
+        width: "100%",
+        backgroundColor: "white",
       }}
     >
       <a class="logo" href="https://theclimatechoice.com/en">
