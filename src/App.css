@@ -9,15 +9,14 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  background-color: white;
 }
 
 .App-link {
@@ -37,12 +36,12 @@
 
 .card-container {
   flex-direction: row;
-  /* padding: 5px;
+  padding: 5px;
   justify-content: center;
-  width: 200px;
+  width: 100%;
   border: 1px solid black;
   line-height: 5px;
-  margin: 10px; */
+  margin: 10px;
 }
 
 .upper-card {

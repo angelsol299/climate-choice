@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "./Card";
 
-export const Table = ({ data }) => {
+export const Table = ({ data, history }) => {
   console.log("====================================");
   console.log({ data });
   console.log("====================================");
@@ -10,6 +10,23 @@ export const Table = ({ data }) => {
       console.log("====================================");
       console.log("FIRE CLICK");
       console.log(event.target.id);
+    };
+
+    console.log("====================================");
+    console.log({ history });
+    console.log("====================================");
+
+    const toUserDetailsPage = (id) => {
+      const userId = id;
+      if (!userId) {
+        return;
+      }
+      history.push(
+        {
+          pathname: `/${userId}`,
+        },
+        data.find((data) => data.id === userId)
+      );
     };
 
     return (
@@ -25,7 +42,7 @@ export const Table = ({ data }) => {
           return (
             <div
               className="table-container"
-              onClick={(event) => onClick(event)}
+              onClick={(event) => toUserDetailsPage(item.id)}
               key={item.id}
               id={item.id}
               style={{ zIndex: 999 }}

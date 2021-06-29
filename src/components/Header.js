@@ -8,17 +8,7 @@ export const Header = ({
   clearArray,
 }) => {
   return (
-    <main
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-        padding: "10px",
-        position: "fixed",
-        width: "100%",
-        backgroundColor: "white",
-      }}
-    >
+    <main className="header">
       <a class="logo" href="https://theclimatechoice.com/en">
         The Climate Choice
       </a>
