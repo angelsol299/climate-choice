@@ -1,6 +1,6 @@
 import React from "react";
 
-const UserDetails = ({ location }) => {
+const UserDetails = ({ location, history }) => {
   const {
     contact_persons,
     logo,
@@ -20,9 +20,11 @@ const UserDetails = ({ location }) => {
   const personalPhone = contact_persons[0].phone;
   const personalEmail = contact_persons[0].email;
 
-  console.log(location.state);
   return (
     <main className="card-container">
+      <div className="back-button" onClick={() => history.goBack()}>
+        <p>Back</p>
+      </div>
       <section className="upper-card">
         <p className="card-title">{personalName}</p>
         <img className="card-logo" src={logo} alt="" />
@@ -43,8 +45,10 @@ const UserDetails = ({ location }) => {
           <p>Employee number: {employee_count}</p>
         </div>
 
-        <p style={{ lineHeight: "20px" }}>{description}</p>
-        <p>Revenue: {revenue}€</p>
+        <div className="user-details-description">
+          <span className="fw500">Description:</span> {description}
+        </div>
+        <p className="user-details-revenue">Revenue: {revenue}€</p>
       </section>
     </main>
   );
