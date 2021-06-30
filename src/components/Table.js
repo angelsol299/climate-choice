@@ -1,21 +1,7 @@
 import React from "react";
-import { Card } from "./Card";
 
 export const Table = ({ data, history }) => {
-  console.log("====================================");
-  console.log({ data });
-  console.log("====================================");
   const renderCard = () => {
-    const onClick = (event) => {
-      console.log("====================================");
-      console.log("FIRE CLICK");
-      console.log(event.target.id);
-    };
-
-    console.log("====================================");
-    console.log({ history });
-    console.log("====================================");
-
     const toUserDetailsPage = (id) => {
       const userId = id;
       if (!userId) {
@@ -63,42 +49,3 @@ export const Table = ({ data, history }) => {
 
   return <div className="table-layout">{renderCard()}</div>;
 };
-
-{
-  /* <div>
-          <p>name</p>
-          {data.map((item) => {
-            return (
-              <Card
-                key={item.id}
-                name={item.contact_persons[0].name}
-                logo={item.logo}
-              />
-            );
-          })}
-        </div>
-        <div>
-          <p>address</p>
-          {data.map((item) => {
-            return (
-              <Card
-                key={item.id}
-                name={item.contact_persons[0].email}
-                logo={item.logo}
-              />
-            );
-          })}
-        </div>
-        <div>
-          <p>website</p>
-          {data.map((item) => {
-            return <Card key={item.id} name={item.website} logo={item.logo} />;
-          })}
-        </div>
-        <div>
-          <p>country</p>
-          {data.map((item) => {
-            return <Card key={item.id} name={item.country} logo={item.logo} />;
-          })}
-        </div> */
-}

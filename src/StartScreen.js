@@ -20,7 +20,9 @@ const StartScreen = ({ history }) => {
     setOriginalDataset(data);
     setSearchValue(e.target.value);
     array = data.filter((item) =>
-      item.contact_persons[0].name.includes(searchValue)
+      item.contact_persons[0].name
+        .toLowerCase()
+        .includes(searchValue.toLocaleLowerCase())
     );
     setData(array);
   };
@@ -28,8 +30,6 @@ const StartScreen = ({ history }) => {
   const clearArray = () => {
     setData(originalDataset);
   };
-
-  console.log("HISTORY IN APP: ", history);
 
   console.log("====================================");
   console.log({ data });

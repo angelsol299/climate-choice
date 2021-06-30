@@ -21,7 +21,7 @@ const UserDetails = ({ location, history }) => {
   const personalEmail = contact_persons[0].email;
 
   return (
-    <main className="card-container">
+    <main className="user-details-container">
       <div className="back-button" onClick={() => history.goBack()}>
         <p>Back</p>
       </div>

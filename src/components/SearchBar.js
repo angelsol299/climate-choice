@@ -6,15 +6,11 @@ export const SearchBar = ({
 }) => {
   return (
     <div>
-      <input
-        type="text"
-        value={searchValue}
-        onChange={(e) => setSearchValue(e.target.value)}
-      />
-      <button style={{ marginLeft: "5px" }} onClick={testClick}>
+      <input type="text" value={searchValue} onChange={testClick} />
+      <button className="ml5" onClick={testClick}>
         Search
       </button>
-      <button style={{ marginLeft: "5px" }} onClick={clearArray}>
+      <button className="ml5" onClick={clearArray}>
         Clear
       </button>
     </div>
