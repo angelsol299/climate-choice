@@ -9,40 +9,43 @@ const StartScreen = ({ history }) => {
   const [data, setData] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [originalDataset, setOriginalDataset] = useState([]);
-  let array = data;
 
   useEffect(() => {
     fetchUsersData(setData, setIsLoading);
   }, []);
 
-  const testClick = (e) => {
-    setOriginalDataset(data);
-    setSearchValue(e.target.value);
-    array = data.filter((item) =>
-      item.contact_persons[0].name
-        .toLowerCase()
-        .includes(searchValue.toLocaleLowerCase())
-    );
-    setData(array);
-  };
+  const filteredUsers = data.filter((item) => {
+    const searchByName = item.contact_persons[0].name
+      .toLowerCase()
+      .replace(/\s+/g, "")
+      .includes(searchValue.toLocaleLowerCase().replace(/\s+/g, ""));
 
-  const clearArray = () => {
-    setData(originalDataset);
-  };
+    const searchByCountry = item.country
+      .toLocaleLowerCase()
+      .replace(/\s+/g, "")
+      .includes(searchValue.toLocaleLowerCase().replace(/\s+/g, ""));
 
-  console.log("====================================");
-  console.log({ data });
-  console.log("====================================");
+    const searchByCity = item.city
+      .toLocaleLowerCase()
+      .replace(/\s+/g, "")
+      .includes(searchValue.toLocaleLowerCase().replace(/\s+/g, ""));
+
+    const searchByEmail = item.contact_persons[0].email
+      .toLowerCase()
+      .replace(/\s+/g, "")
+      .includes(searchValue.toLocaleLowerCase().replace(/\s+/g, ""));
+
+    return searchByName || searchByCountry || searchByCity || searchByEmail;
+  });
+
   return (
     <>
-      <Header
-        searchValue={searchValue}
-        setSearchValue={setSearchValue}
-        testClick={testClick}
-        clearArray={clearArray}
-      />
-      {isLoading ? <Loader /> : <Table data={data} history={history} />} )
+      <Header searchValue={searchValue} setSearchValue={setSearchValue} />
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <Table data={filteredUsers} history={history} />
+      )}{" "}
     </>
   );
 };

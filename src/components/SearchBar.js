@@ -1,18 +1,13 @@
-export const SearchBar = ({
-  searchValue,
-  setSearchValue,
-  testClick,
-  clearArray,
-}) => {
+export const SearchBar = ({ searchValue, setSearchValue }) => {
   return (
     <div>
-      <input type="text" value={searchValue} onChange={testClick} />
-      <button className="ml5" onClick={testClick}>
-        Search
-      </button>
-      <button className="ml5" onClick={clearArray}>
-        Clear
-      </button>
+      <input
+        style={{ width: "250px" }}
+        type="text"
+        value={searchValue}
+        onChange={(e) => setSearchValue(e.target.value)}
+        placeholder="search name, email, city or country"
+      />
     </div>
   );
 };

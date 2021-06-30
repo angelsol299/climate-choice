@@ -14,6 +14,7 @@ const UserDetails = ({ location, history }) => {
     revenue,
     zip_code,
     phone,
+    city,
   } = location.state;
 
   const personalName = contact_persons[0].name;
@@ -31,11 +32,12 @@ const UserDetails = ({ location, history }) => {
       </section>
       <section className="lower-card">
         <div>
+          <p>Personal email: {personalEmail}</p>
+          <p>Personal phone : {personalPhone} </p>
           <p>Country: {country}</p>
+          <p>City: {city}</p>
           <p>Street: {street}</p>
           <p>Zip code: {zip_code}</p>
-          <p>Personal phone : {personalPhone} </p>
-          <p>Personal email: {personalEmail}</p>
         </div>
         <div>
           <p>Company: {name}</p>
