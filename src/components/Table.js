@@ -2,34 +2,34 @@ import React from "react";
 import { ItemNotFound } from "./ItemNotFound";
 
 export const Table = ({ data, history, searchValue }) => {
-  const renderCard = () => {
-    const toUserDetailsPage = (id) => {
-      const userId = id;
-      if (!userId) {
-        return;
-      }
-      history.push(
-        {
-          pathname: `/userDetails/${userId}`,
-        },
-        data.find((data) => data.id === userId)
-      );
-    };
+  const toUserDetailsPage = (id) => {
+    const userId = id;
+    if (!userId) {
+      return;
+    }
+    history.push(
+      {
+        pathname: `/userDetails/${userId}`,
+      },
+      data.find((data) => data.id === userId)
+    );
+  };
 
-    return (
+  return (
+    <main className="table-layout">
       <div className="table-container-main">
-        <div className="row-header">
+        <section className="row-header">
           <p className="itemList">Name</p>
           <p className="itemList email">Email</p>
           <p className="itemList">City </p>
           <p className="itemList">Country </p>
-        </div>
+        </section>
         {data.length > 0 ? (
           data.map((item) => {
             return (
-              <div
+              <section
                 className="table-content-container"
-                onClick={(event) => toUserDetailsPage(item.id)}
+                onClick={() => toUserDetailsPage(item.id)}
                 key={item.id}
                 id={item.id}
                 style={{ zIndex: 999 }}
@@ -42,15 +42,13 @@ export const Table = ({ data, history, searchValue }) => {
                 </p>
                 <p className="itemList">{item.city} </p>
                 <p className="itemList">{item.country} </p>
-              </div>
+              </section>
             );
           })
         ) : (
           <ItemNotFound />
         )}
       </div>
-    );
-  };
-
-  return <div className="table-layout">{renderCard()}</div>;
+    </main>
+  );
 };

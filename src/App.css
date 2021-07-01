@@ -25,6 +25,7 @@
   align-items: center;
   line-height: 16px;
   justify-content: space-around;
+  margin-top: 50px;
 }
 
 .user-details-lower-card {
@@ -143,12 +144,32 @@
   margin-bottom: 40px;
 }
 
+.user-details-revenue-amount {
+  color: darkblue;
+}
+
 .search-bar-input-text {
   width: 250px;
   height: 30px;
   outline: none;
   border: 1px solid darkblue;
   border-radius: 5px;
+}
+
+.input-container {
+  width: auto;
+}
+
+#input-large {
+  display: inline-block;
+}
+#input-small {
+  display: none;
+}
+
+input[type="text"] {
+  padding-left: 10px;
+  font-size: 13px;
 }
 
 .item-not-found {
@@ -180,7 +201,15 @@
 .lh15 {
   line-height: 15px;
 }
-
+@media only screen and (max-width: 800px) {
+  .user-details-lower-card {
+    justify-content: flex-start;
+    padding: 20px;
+  }
+  .user-details-description {
+    padding: 0;
+  }
+}
 @media only screen and (max-width: 600px) {
   .email {
     display: none;
@@ -190,19 +219,43 @@
   }
 
   .table-container-main {
-    margin-top: 140px;
-  }
-
-  .user-details-lower-card {
-    justify-content: flex-start;
-    padding: 20px;
-  }
-
-  .user-details-description {
-    padding: 0;
+    margin-top: 150px;
   }
 
   .header {
     align-items: flex-start;
+  }
+
+  input[type="text"] {
+    font-size: 17px;
+  }
+
+  .input-container {
+    width: 100%;
+  }
+
+  #input-large {
+    display: none;
+  }
+  #input-small {
+    display: inline-block;
+    width: 90%;
+    height: 40px;
+  }
+
+  .user-details-upper-card {
+    flex-direction: column-reverse;
+  }
+
+  .back-button {
+    height: 35px;
+    width: 70px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .user-details-logo {
+    width: 150px;
+    height: 150px;
   }
 }
