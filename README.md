@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+### This project was created with create-react-app and redux as state management tool
+
+## clone the master branch and just do "npm install", cd into the folder and run "npm start"
+
+## This web app is responsive shall work well on mobile and desktops.
+
+## You can do dynamics search by name, email, city or country in desktop and by name, city and country in mobile
+
+## All the elements in the table are clickable and when clicking to a field you shall be redirected to user details where you can see more information about the users
