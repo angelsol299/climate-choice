@@ -6,13 +6,14 @@ import { fetchUsersData } from "../store/actions";
 import { useDispatch, useSelector } from "react-redux";
 import { filteredUsers } from "../utils";
 import "../App.css";
+import { selectIsLoading, selectUsersData } from "../store/selectors";
 
 const StartScreen = ({ history }) => {
   const [searchValue, setSearchValue] = useState("");
   const dispatch = useDispatch();
 
-  const isLoading = useSelector((state) => state.users.isDataLoading);
-  const getusersData = useSelector((state) => state.users.data);
+  const isLoading = useSelector(selectIsLoading);
+  const getusersData = useSelector(selectUsersData);
   const filteredData = filteredUsers(getusersData, searchValue);
 
   useEffect(() => {
@@ -20,10 +21,6 @@ const StartScreen = ({ history }) => {
       dispatch(fetchUsersData());
     }
   }, [dispatch]);
-
-  console.log("====================================");
-  console.log({ filteredData });
-  console.log("====================================");
 
   return (
     <>
