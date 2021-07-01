@@ -13,8 +13,8 @@ const StartScreen = ({ history }) => {
   const dispatch = useDispatch();
 
   const isLoading = useSelector(selectIsLoading);
-  const getusersData = useSelector(selectUsersData);
-  const filteredData = filteredUsers(getusersData, searchValue);
+  const getUsersData = useSelector(selectUsersData);
+  const filteredData = filteredUsers(getUsersData, searchValue);
 
   useEffect(() => {
     if (filteredData.length === 0) {
