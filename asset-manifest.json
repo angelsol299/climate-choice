@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/climate-choice/static/css/main.e4d17ec1.chunk.css",
+    "main.js": "/climate-choice/static/js/main.6faab425.chunk.js",
+    "main.js.map": "/climate-choice/static/js/main.6faab425.chunk.js.map",
+    "runtime-main.js": "/climate-choice/static/js/runtime-main.2425a4a3.js",
+    "runtime-main.js.map": "/climate-choice/static/js/runtime-main.2425a4a3.js.map",
+    "static/js/2.afed97a4.chunk.js": "/climate-choice/static/js/2.afed97a4.chunk.js",
+    "static/js/2.afed97a4.chunk.js.map": "/climate-choice/static/js/2.afed97a4.chunk.js.map",
+    "static/js/3.4e6fb0a5.chunk.js": "/climate-choice/static/js/3.4e6fb0a5.chunk.js",
+    "static/js/3.4e6fb0a5.chunk.js.map": "/climate-choice/static/js/3.4e6fb0a5.chunk.js.map",
+    "index.html": "/climate-choice/index.html",
+    "static/css/main.e4d17ec1.chunk.css.map": "/climate-choice/static/css/main.e4d17ec1.chunk.css.map",
+    "static/js/2.afed97a4.chunk.js.LICENSE.txt": "/climate-choice/static/js/2.afed97a4.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2425a4a3.js",
+    "static/js/2.afed97a4.chunk.js",
+    "static/css/main.e4d17ec1.chunk.css",
+    "static/js/main.6faab425.chunk.js"
+  ]
+}
