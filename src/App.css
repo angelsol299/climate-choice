@@ -76,7 +76,12 @@
   flex-wrap: wrap;
 }
 
-.table-container {
+.table-container-main {
+  margin-top: 100px;
+  width: 100%;
+}
+
+.table-content-container {
   display: flex;
   width: 100%;
   flex-direction: row;
@@ -85,6 +90,11 @@
   background-color: white;
   height: 64px;
   border-bottom: 1px solid;
+}
+
+.table-content-container:hover {
+  background-color: lightgrey;
+  cursor: pointer;
 }
 
 .row-header {
@@ -96,11 +106,6 @@
   background-color: white;
   height: 64px;
   border-bottom: 1px solid;
-}
-
-.table-container:hover {
-  background-color: lightgrey;
-  cursor: pointer;
 }
 
 .loader-title {
@@ -157,6 +162,17 @@
   margin-bottom: 40px;
 }
 
+/* **/
+.search-bar-input-text {
+  width: 250px;
+}
+
+.item-not-found {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* General styling **/
 
 .fw500 {
@@ -165,4 +181,14 @@
 
 .ml5 {
   margin-left: 5px;
+}
+
+/* Not found **/
+.not-found-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
 }

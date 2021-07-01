@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Header } from "./components/Header";
-import { Table } from "./components/Table";
-import { Loader } from "./components/Loader";
-import { fetchUsersData } from "./store/action";
-import "../src/App.css";
+import { Header } from "../components/Header";
+import { Table } from "../components/Table";
+import { Loader } from "../components/Loader";
+import { fetchUsersData } from "../store/actions";
+import "../App.css";
 import { useDispatch, useSelector } from "react-redux";
 
 const StartScreen = ({ history }) => {
@@ -14,14 +14,15 @@ const StartScreen = ({ history }) => {
     dispatch(fetchUsersData());
   }, [dispatch]);
 
-  const dataResult = useSelector((state) => state.users);
+  const dataResult = useSelector((state) => state.users.data);
+  const isLoading = useSelector((state) => state.users.isDataLoading);
 
   console.log("====================================");
   console.log({ dataResult });
   console.log("====================================");
-  const data = dataResult.payload;
+  const data = dataResult;
   console.log("====================================");
-  console.log({ data });
+  console.log({ isLoading });
   console.log("====================================");
 
   const filteredUsers =
@@ -48,7 +49,11 @@ const StartScreen = ({ history }) => {
   return (
     <>
       <Header searchValue={searchValue} setSearchValue={setSearchValue} />
-      {filteredUsers && <Table data={filteredUsers} history={history} />}
+      {isLoading ? (
+        <Loader />
+      ) : (
+        filteredUsers && <Table data={filteredUsers} history={history} />
+      )}
     </>
   );
 };

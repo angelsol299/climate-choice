@@ -1,7 +1,14 @@
-const reducer = (state = [], action) => {
+const initialState = {
+  data: [],
+  isDataLoading: false,
+};
+
+const reducer = (state = initialState, action) => {
   switch (action.type) {
     case "GET_USERS_DATA":
-      return { ...state, payload: action.payload };
+      return { ...state, data: action.payload };
+    case "IS_DATA_LOADING":
+      return { ...state, isDataLoading: action.payload };
     default:
       return state;
   }

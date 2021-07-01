@@ -9,14 +9,14 @@ export const Table = ({ data, history }) => {
       }
       history.push(
         {
-          pathname: `/${userId}`,
+          pathname: `/userDetails/${userId}`,
         },
         data.find((data) => data.id === userId)
       );
     };
 
     return (
-      <div style={{ marginTop: "100px", width: "100%" }}>
+      <div className="table-container-main">
         <div className="row-header">
           <p className="itemList">Name</p>
           <p className="itemList">Email</p>
@@ -27,7 +27,7 @@ export const Table = ({ data, history }) => {
           data.map((item) => {
             return (
               <div
-                className="table-container"
+                className="table-content-container"
                 onClick={(event) => toUserDetailsPage(item.id)}
                 key={item.id}
                 id={item.id}
@@ -43,13 +43,7 @@ export const Table = ({ data, history }) => {
             );
           })
         ) : (
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+          <div className="item-not-found">
             <p>Item not found, please search again</p>
           </div>
         )}

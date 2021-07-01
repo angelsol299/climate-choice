@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "./Button";
 
 const UserDetails = ({ location, history }) => {
   const {
@@ -23,9 +24,7 @@ const UserDetails = ({ location, history }) => {
 
   return (
     <main className="user-details-container">
-      <div className="back-button" onClick={() => history.goBack()}>
-        <p>Back</p>
-      </div>
+      <Button onClick={() => history.goBack()}>Back</Button>
       <section className="upper-card">
         <p className="card-title">{personalName}</p>
         <img className="card-logo" src={logo} alt="" />
