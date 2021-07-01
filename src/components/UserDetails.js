@@ -1,6 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Button } from "./Button";
 
 const UserDetails = ({ location, history }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const {
     contact_persons,
     logo,
@@ -23,15 +28,13 @@ const UserDetails = ({ location, history }) => {
 
   return (
     <main className="user-details-container">
-      <div className="back-button" onClick={() => history.goBack()}>
-        <p>Back</p>
-      </div>
-      <section className="upper-card">
-        <p className="card-title">{personalName}</p>
-        <img className="card-logo" src={logo} alt="" />
+      <Button onClick={() => history.goBack()}>Back</Button>
+      <section className="user-details-upper-card">
+        <p className="user-details-title">{personalName}</p>
+        <img className="user-details-logo" src={logo} alt="" />
       </section>
-      <section className="lower-card">
-        <div>
+      <section className="user-details-lower-card">
+        <div className="lh15">
           <p>Personal email: {personalEmail}</p>
           <p>Personal phone : {personalPhone} </p>
           <p>Country: {country}</p>
@@ -39,7 +42,7 @@ const UserDetails = ({ location, history }) => {
           <p>Street: {street}</p>
           <p>Zip code: {zip_code}</p>
         </div>
-        <div>
+        <div className="lh15">
           <p>Company: {name}</p>
           <p>Company email: {email}</p>
           <p>Company phone: {phone}</p>

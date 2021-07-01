@@ -1,6 +1,7 @@
 import React from "react";
+import { ItemNotFound } from "./ItemNotFound";
 
-export const Table = ({ data, history }) => {
+export const Table = ({ data, history, searchValue }) => {
   const renderCard = () => {
     const toUserDetailsPage = (id) => {
       const userId = id;
@@ -9,17 +10,17 @@ export const Table = ({ data, history }) => {
       }
       history.push(
         {
-          pathname: `/${userId}`,
+          pathname: `/userDetails/${userId}`,
         },
         data.find((data) => data.id === userId)
       );
     };
 
     return (
-      <div style={{ marginTop: "100px", width: "100%" }}>
+      <div className="table-container-main">
         <div className="row-header">
           <p className="itemList">Name</p>
-          <p className="itemList">Email</p>
+          <p className="itemList email">Email</p>
           <p className="itemList">City </p>
           <p className="itemList">Country </p>
         </div>
@@ -27,7 +28,7 @@ export const Table = ({ data, history }) => {
           data.map((item) => {
             return (
               <div
-                className="table-container"
+                className="table-content-container"
                 onClick={(event) => toUserDetailsPage(item.id)}
                 key={item.id}
                 id={item.id}
@@ -36,22 +37,16 @@ export const Table = ({ data, history }) => {
                 <p className="itemList" id={item.id}>
                   {item.contact_persons[0].name}
                 </p>
-                <p className="itemList">{item.contact_persons[0].email}</p>
+                <p className="itemList email">
+                  {item.contact_persons[0].email}
+                </p>
                 <p className="itemList">{item.city} </p>
                 <p className="itemList">{item.country} </p>
               </div>
             );
           })
         ) : (
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <p>Item not found, please search again</p>
-          </div>
+          <ItemNotFound />
         )}
       </div>
     );
