@@ -9,15 +9,14 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
   display: flex;
-  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  background-color: white;
 }
 
 .App-link {
@@ -35,10 +34,10 @@
 
 /* Card styles */
 
-.card-container {
+.user-details-container {
+  flex-direction: row;
   padding: 5px;
   justify-content: center;
-  width: 200px;
   border: 1px solid black;
   line-height: 5px;
   margin: 10px;
@@ -56,16 +55,17 @@
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin-top: 30px;
 }
 
 .card-logo {
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   border-radius: 100px;
 }
 
 .card-title {
-  font-size: 14px;
+  font-size: 25px;
   font-weight: 500;
 }
 
@@ -78,9 +78,29 @@
 
 .table-container {
   display: flex;
+  width: 100%;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: white;
+  height: 64px;
+  border-bottom: 1px solid;
+}
+
+.row-header {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  background-color: white;
+  height: 64px;
+  border-bottom: 1px solid;
+}
+
+.table-container:hover {
+  background-color: lightgrey;
+  cursor: pointer;
 }
 
 .loader-title {
@@ -97,4 +117,52 @@
     no-repeat left center / contain;
   overflow: hidden;
   line-height: 2;
+}
+
+.itemList {
+  width: 30%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* user details **/
+
+.back-button {
+  height: 30px;
+  width: 60px;
+  border: 1px solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20px;
+  position: absolute;
+  top: 25px;
+  left: 30px;
+}
+
+.back-button:hover {
+  cursor: pointer;
+  background-color: lightblue;
+}
+
+.user-details-description {
+  line-height: 20px;
+  padding: 20px;
+}
+
+.user-details-revenue {
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+/* General styling **/
+
+.fw500 {
+  font-weight: 500;
+}
+
+.ml5 {
+  margin-left: 5px;
 }
