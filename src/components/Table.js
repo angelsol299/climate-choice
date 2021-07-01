@@ -1,6 +1,7 @@
 import React from "react";
+import { ItemNotFound } from "./ItemNotFound";
 
-export const Table = ({ data, history }) => {
+export const Table = ({ data, history, searchValue }) => {
   const renderCard = () => {
     const toUserDetailsPage = (id) => {
       const userId = id;
@@ -19,7 +20,7 @@ export const Table = ({ data, history }) => {
       <div className="table-container-main">
         <div className="row-header">
           <p className="itemList">Name</p>
-          <p className="itemList">Email</p>
+          <p className="itemList email">Email</p>
           <p className="itemList">City </p>
           <p className="itemList">Country </p>
         </div>
@@ -36,16 +37,16 @@ export const Table = ({ data, history }) => {
                 <p className="itemList" id={item.id}>
                   {item.contact_persons[0].name}
                 </p>
-                <p className="itemList">{item.contact_persons[0].email}</p>
+                <p className="itemList email">
+                  {item.contact_persons[0].email}
+                </p>
                 <p className="itemList">{item.city} </p>
                 <p className="itemList">{item.country} </p>
               </div>
             );
           })
         ) : (
-          <div className="item-not-found">
-            <p>Item not found, please search again</p>
-          </div>
+          <ItemNotFound />
         )}
       </div>
     );

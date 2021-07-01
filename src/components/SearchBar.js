@@ -1,3 +1,5 @@
+import React from "react";
+
 export const SearchBar = ({ searchValue, setSearchValue }) => {
   return (
     <div>
@@ -6,7 +8,7 @@ export const SearchBar = ({ searchValue, setSearchValue }) => {
         type="text"
         value={searchValue}
         onChange={(e) => setSearchValue(e.target.value)}
-        placeholder="search name, email, city or country"
+        placeholder="search by name, email, city or country"
       />
     </div>
   );

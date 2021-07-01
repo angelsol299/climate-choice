@@ -3,9 +3,9 @@ import { loadUsers } from "../../services/api";
 export const fetchUsersData = () => {
   return async (dispatch) => {
     dispatch(getIsDataLoading(true));
-    const result = await loadUsers();
-    dispatch(getUsersData(result));
+    const result = await loadUsers(dispatch);
     dispatch(getIsDataLoading(false));
+    dispatch(getUsersData(result));
   };
 };
 
