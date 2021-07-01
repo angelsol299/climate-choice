@@ -35,25 +35,54 @@ const UserDetails = ({ location, history }) => {
       </section>
       <section className="user-details-lower-card">
         <div className="lh15">
-          <p>Personal email: {personalEmail}</p>
-          <p>Personal phone : {personalPhone} </p>
-          <p>Country: {country}</p>
-          <p>City: {city}</p>
-          <p>Street: {street}</p>
-          <p>Zip code: {zip_code}</p>
+          <p>
+            <strong>Personal email:</strong> {personalEmail}
+          </p>
+          <p>
+            <strong>Personal phone :</strong> {personalPhone}{" "}
+          </p>
+          <p>
+            <strong>Country:</strong> {country}
+          </p>
+          <p>
+            <strong>City:</strong> {city}
+          </p>
+          <p>
+            <strong>Street:</strong> {street}
+          </p>
+          <p>
+            <strong>Zip code:</strong> {zip_code}
+          </p>
         </div>
         <div className="lh15">
-          <p>Company: {name}</p>
-          <p>Company email: {email}</p>
-          <p>Company phone: {phone}</p>
-          <p>Website: {website}</p>
-          <p>Employee number: {employee_count}</p>
+          <p>
+            <strong>Company: </strong> {name}
+          </p>
+          <p>
+            {" "}
+            <strong>Company email:</strong> {email}
+          </p>
+          <p>
+            {" "}
+            <strong>Company phone:</strong> {phone}
+          </p>
+          <p>
+            {" "}
+            <strong>Website:</strong> {website}
+          </p>
+          <p>
+            {" "}
+            <strong>Employee number:</strong> {employee_count}
+          </p>
         </div>
 
         <div className="user-details-description">
           <span className="fw500">Description:</span> {description}
         </div>
-        <p className="user-details-revenue">Revenue: {revenue}€</p>
+        <p className="user-details-revenue">
+          Revenue:{" "}
+          <span className="user-details-revenue-amount">{revenue}€</span>
+        </p>
       </section>
     </main>
   );
